@@ -1,0 +1,24 @@
+<div class="country-filters">
+  <div class="search-filter shadow">
+    <span class="fa fa-search"></span>
+    <input
+      type="text"
+      placeholder="Rechercher un continent..."
+      [(ngModel)]="searchFilter"
+    />
+  </div>
+
+  <!-- <app-dropdown
+    placeholder="Filtrer par continent"
+    [values]="regionOptions"
+    [(value)]="regionFilter"
+  ></app-dropdown> -->
+</div>
+<div class="loade" *ngIf="isVisible" ></div>
+
+<div class="country-cards">
+  <app-continent-card
+    *ngFor="let continent of continents"
+    [continent]="continent"
+  ></app-continent-card>
+</div>

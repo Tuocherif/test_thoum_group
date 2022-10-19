@@ -1,0 +1,11 @@
+<div
+  *ngIf="continent"
+  [routerLink]="'/' + continent.Name"
+  class="country-card shadow"
+>
+
+  <div class="country-card-info">
+    <h2>{{ continent.Name }}</h2>
+    <h3 style="color: rgb(45, 5, 133);">{{ continent.Code }}</h3>
+  </div>
+</div>

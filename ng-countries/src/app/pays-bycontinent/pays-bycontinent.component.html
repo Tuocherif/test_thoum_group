@@ -1,0 +1,24 @@
+<div *ngIf="country$ | async; let country" class="country">
+  <button class="button shadow" [routerLink]="'/'">
+    <span class="fa fa-arrow-left"></span>
+    Back
+  </button>
+  <div class="country-card-img">
+    <img [src]="country.flag" />
+  </div>
+  <div class="country-card-info">
+    <h2>{{ country.name }}</h2>
+    <h3 style="color: rgb(45, 5, 133);">{{ country.code }}</h3>
+    <p>
+      <strong>Population:</strong>
+      {{ country.population | number: '1.0' }}
+    </p>
+    <p>
+      <strong>Region:</strong>
+      {{ country.region }}
+    </p>
+    <p>
+      <strong>Capital:</strong>
+      {{ country.capital }}
+    </p>
+</div>

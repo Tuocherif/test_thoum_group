@@ -1,0 +1,31 @@
+
+export default async function handler(req, res) {
+
+    let store = await fetch("http://localhost:3000/api/store");
+    let storeResponse = await store.json();
+
+    console.log(storeResponse);
+
+    if (storeResponse === 200) {
+        let response = await fetch("http://localhost:3000/api/post", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        let allPosts = await response.json();
+        res.send(allPosts);
+    }else{
+        let response = await fetch("http://localhost:3000/api/post", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        let allPosts = await response.json();
+        res.send(allPosts);
+    }
+    
+
+  
+}

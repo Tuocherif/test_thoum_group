@@ -1,0 +1,24 @@
+<div class="country-filters">
+  <div class="search-filter shadow">
+    <span class="fa fa-search"></span>
+    <input
+      type="text"
+      placeholder="Rechercher un pays..."
+      [(ngModel)]="searchFilter"
+    />
+  </div>
+
+
+</div>
+<button class="button shadow" [routerLink]="'/'">
+  <span class="fa fa-arrow-left"></span>
+  Retour
+</button>
+
+<div class="loader" *ngIf="isVisible" ></div>
+<div class="country-cards">
+  <app-country-card
+    *ngFor="let country of countries"
+    [country]="country"
+  ></app-country-card>
+</div>
